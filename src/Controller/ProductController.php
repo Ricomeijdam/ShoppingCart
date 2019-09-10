@@ -101,7 +101,7 @@ class ProductController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/add", name="product_add", methods={"GET","POST"})
+     * @Route("add/{id}", name="product_add", methods={"GET","POST"})
      */
     public function add(Product $product, ProductRepository $productRepository): Response
     {

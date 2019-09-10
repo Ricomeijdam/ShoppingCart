@@ -4,11 +4,12 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Form\ContactType;
 
 class DeafultController extends AbstractController
 {
     /**
-     * @Route("/deafult", name="deafult")
+     * @Route("/", name="deafult")
      */
     public function index()
     {

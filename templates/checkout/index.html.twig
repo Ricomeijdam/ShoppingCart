@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Naam</th>
+            <th>Prijs</th>
+            <th>Omschrijving</th>
+            <th>Aantal</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in Products %}
+        <tr>
+            <td>{{ product.Product.naam }}</td>
+            <td>€ {{ product.Product.prijs }}</span></td>
+            <td>{{ product.Product.omschrijving }}</td>
+            <td>{{ product.Aantal }}</td>
+        </tr>
+        </tbody>
+        {% endfor %}
+        <tr>
+            <th>Totaal: € <span>{{ totaal }}</span></th>
+        </tr>
+    </table>
+
+    <div>
+        {{ form_start(our_form) }}
+        {{ form_widget(our_form) }}
+        <input class="btn btn-success {% if Products|length < 1 %}disabled{% endif %}" type="submit" value="Krijg de tering wesley">
+        {{ form_end(our_form) }}
+    </div>
+
+{% endblock %}

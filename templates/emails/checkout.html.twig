@@ -1,0 +1,22 @@
+<p>Hallo {{ Naam }}</p>
+
+<strong>Hier is uw bestellijst</strong>
+
+<table>
+    <tr>
+        <th>Naam</th>
+        <th>Product Prijs</th>
+        <th>Aantal</th>
+    </tr>
+    {% for product in Products %}
+        <tr>
+            <td>
+                <p>{{ product.Product.naam }}</p>
+            </td>
+            <td>€{{ product.Product.prijs }}</td>
+            <td>
+                <p>{{ product.Aantal }}</p>
+            </td>
+        </tr>
+    {% endfor %}
+</table>

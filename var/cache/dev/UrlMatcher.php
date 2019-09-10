@@ -16,7 +16,8 @@ return [
         '/cart' => [[['_route' => 'cart', '_controller' => 'App\\Controller\\CartController::index'], null, null, null, false, false, null]],
         '/category' => [[['_route' => 'category_index', '_controller' => 'App\\Controller\\CategoryController::index'], null, ['GET' => 0], null, true, false, null]],
         '/category/new' => [[['_route' => 'category_new', '_controller' => 'App\\Controller\\CategoryController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/deafult' => [[['_route' => 'deafult', '_controller' => 'App\\Controller\\DeafultController::index'], null, null, null, false, false, null]],
+        '/checkout' => [[['_route' => 'checkout', '_controller' => 'App\\Controller\\CheckoutController::index'], null, null, null, false, false, null]],
+        '/' => [[['_route' => 'deafult', '_controller' => 'App\\Controller\\DeafultController::index'], null, null, null, false, false, null]],
         '/product' => [[['_route' => 'product_index', '_controller' => 'App\\Controller\\ProductController::index'], null, ['GET' => 0], null, true, false, null]],
         '/product/new' => [[['_route' => 'product_new', '_controller' => 'App\\Controller\\ProductController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
     ],
@@ -42,13 +43,13 @@ return [
                     .'|/edit(*:203)'
                     .'|(*:211)'
                 .')'
-                .'|/product/([^/]++)(?'
-                    .'|(*:240)'
-                    .'|/(?'
-                        .'|edit(*:256)'
-                        .'|add(*:267)'
+                .'|/product(?'
+                    .'|/([^/]++)(?'
+                        .'|(*:243)'
+                        .'|/edit(*:256)'
+                        .'|(*:264)'
                     .')'
-                    .'|(*:276)'
+                    .'|add/([^/]++)(*:285)'
                 .')'
             .')/?$}sDu',
     ],
@@ -63,11 +64,11 @@ return [
         190 => [[['_route' => 'category_show', '_controller' => 'App\\Controller\\CategoryController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         203 => [[['_route' => 'category_edit', '_controller' => 'App\\Controller\\CategoryController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         211 => [[['_route' => 'category_delete', '_controller' => 'App\\Controller\\CategoryController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        240 => [[['_route' => 'product_show', '_controller' => 'App\\Controller\\ProductController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        243 => [[['_route' => 'product_show', '_controller' => 'App\\Controller\\ProductController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         256 => [[['_route' => 'product_edit', '_controller' => 'App\\Controller\\ProductController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        267 => [[['_route' => 'product_add', '_controller' => 'App\\Controller\\ProductController::add'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        276 => [
-            [['_route' => 'product_delete', '_controller' => 'App\\Controller\\ProductController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
+        264 => [[['_route' => 'product_delete', '_controller' => 'App\\Controller\\ProductController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        285 => [
+            [['_route' => 'product_add', '_controller' => 'App\\Controller\\ProductController::add'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],
