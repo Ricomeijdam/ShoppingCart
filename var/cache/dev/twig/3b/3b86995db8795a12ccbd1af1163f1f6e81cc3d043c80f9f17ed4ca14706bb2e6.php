@@ -125,12 +125,7 @@ class __TwigTemplate_bdf98f97e737c63e1cf0ecfe086eb184f885ef807a0c34458b2900c3ee1
         // line 32
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["our_form"]) || array_key_exists("our_form", $context) ? $context["our_form"] : (function () { throw new RuntimeError('Variable "our_form" does not exist.', 32, $this->source); })()), 'widget');
         echo "
-        <input class=\"btn btn-success ";
-        // line 33
-        if ((twig_length_filter($this->env, (isset($context["Products"]) || array_key_exists("Products", $context) ? $context["Products"] : (function () { throw new RuntimeError('Variable "Products" does not exist.', 33, $this->source); })())) < 1)) {
-            echo "disabled";
-        }
-        echo "\" type=\"submit\" value=\"Krijg de tering wesley\">
+        <input class=\"btn btn-outline-success\" type=\"submit\" value=\"Verzend\">
         ";
         // line 34
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["our_form"]) || array_key_exists("our_form", $context) ? $context["our_form"] : (function () { throw new RuntimeError('Variable "our_form" does not exist.', 34, $this->source); })()), 'form_end');
@@ -158,7 +153,7 @@ class __TwigTemplate_bdf98f97e737c63e1cf0ecfe086eb184f885ef807a0c34458b2900c3ee1
 
     public function getDebugInfo()
     {
-        return array (  136 => 34,  130 => 33,  126 => 32,  122 => 31,  114 => 26,  111 => 25,  101 => 21,  97 => 20,  93 => 19,  89 => 18,  86 => 17,  82 => 16,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  131 => 34,  126 => 32,  122 => 31,  114 => 26,  111 => 25,  101 => 21,  97 => 20,  93 => 19,  89 => 18,  86 => 17,  82 => 16,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -195,7 +190,7 @@ class __TwigTemplate_bdf98f97e737c63e1cf0ecfe086eb184f885ef807a0c34458b2900c3ee1
     <div>
         {{ form_start(our_form) }}
         {{ form_widget(our_form) }}
-        <input class=\"btn btn-success {% if Products|length < 1 %}disabled{% endif %}\" type=\"submit\" value=\"Krijg de tering wesley\">
+        <input class=\"btn btn-outline-success\" type=\"submit\" value=\"Verzend\">
         {{ form_end(our_form) }}
     </div>
 

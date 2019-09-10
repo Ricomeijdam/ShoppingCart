@@ -43,7 +43,7 @@ class CheckoutController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $formData = $form->getData();
 
-            $message = (new \Swift_Message('Bevestegings Email!'))
+            $message = (new \Swift_Message('Bevestigings Email!'))
                 ->setFrom('info@webshop.com')
                 ->setReplyTo('1024984@mborijnland.nl')
                 ->setTo($formData['Email'])
