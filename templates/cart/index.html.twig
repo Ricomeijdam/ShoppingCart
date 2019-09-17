@@ -3,32 +3,39 @@
 {% block body %}
 
     <div class="container">
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Naam</th>
-                <th>Prijs</th>
-                <th>Omschrijving</th>
-                <th>Aantal</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for product in Products %}
-            <tr>
-                <td>{{ product.Product.naam }}</td>
-                <td>€ {{ product.Product.prijs }}</span></td>
-                <td>{{ product.Product.omschrijving }}</td>
-                <td>{{ product.Aantal }}</td>
-            </tr>
-            </tbody>
-    {% endfor %}
-            <tr>
-                <th>Totaal: € <span>{{ totaal }}</span></th>
-            </tr>
-        </table>
+    <h2>Winkelwagen</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Naam</th>
+            <th>Prijs</th>
+            <th>Omschrijving</th>
+            <th>Aantal</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in Products %}
+        <tr>
+            <td>{{ product.Product.naam }}</td>
+            <td>€ {{ product.Product.prijs }}</span></td>
+            <td>{{ product.Product.omschrijving }}</td>
+            <td>{{ product.Aantal }}</td>
+            <td>
+                <a class="btn btn-outline-success" href="{{ path('cart_add', {'id': product.Product.id}) }}">Add</a>
+                <a class="btn btn-outline-danger" href="{{ path('cart_remove', {'id': product.Product.id}) }}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+        {% endfor %}
+        <tr>
+            <th>Totaal: € <span>{{ totaal }}</span></th>
+        </tr>
+    </table>
 
     <div>
-        <button type="button" class="btn btn-outline-success"><a href="{{ path('checkout') }}">Afrekenen</a></button>
+        <a class="btn btn-outline-success" href="{{ path('checkout') }}">Afrekenen</a>
+        <span><a class="btn btn-outline-info" href="{{ path('product_index') }}">Veder winkelen</a></span>
     </div>
 
 

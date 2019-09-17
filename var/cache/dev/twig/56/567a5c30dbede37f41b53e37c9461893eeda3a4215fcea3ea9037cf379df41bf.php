@@ -85,17 +85,19 @@ class __TwigTemplate_66990e7317693e45ee152b8fe2120efcaf040b7bb29fb5d1951439349b9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new Product</h1>
-
-    ";
-        // line 8
+        echo "    <div class=\"container\">
+        <h2 class=\"mt-5\">Create new Product</h2>
+        <hr>
+        <span>";
+        // line 9
         echo twig_include($this->env, $context, "product/_form.html.twig");
-        echo "
-
-    <a href=\"";
+        echo "</span>
+        <a class=\"btn btn-outline-info\" href=\"";
         // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_index");
         echo "\">back to list</a>
+    </div>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -117,7 +119,7 @@ class __TwigTemplate_66990e7317693e45ee152b8fe2120efcaf040b7bb29fb5d1951439349b9
 
     public function getDebugInfo()
     {
-        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  97 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -127,11 +129,13 @@ class __TwigTemplate_66990e7317693e45ee152b8fe2120efcaf040b7bb29fb5d1951439349b9
 {% block title %}New Product{% endblock %}
 
 {% block body %}
-    <h1>Create new Product</h1>
+    <div class=\"container\">
+        <h2 class=\"mt-5\">Create new Product</h2>
+        <hr>
+        <span>{{ include('product/_form.html.twig') }}</span>
+        <a class=\"btn btn-outline-info\" href=\"{{ path('product_index') }}\">back to list</a>
+    </div>
 
-    {{ include('product/_form.html.twig') }}
-
-    <a href=\"{{ path('product_index') }}\">back to list</a>
 {% endblock %}
 ", "product/new.html.twig", "C:\\xampp\\htdocs\\shoppingcart\\templates\\product\\new.html.twig");
     }

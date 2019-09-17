@@ -16,6 +16,8 @@ return [
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception::showAction'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception::cssAction'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     'cart' => [[], ['_controller' => 'App\\Controller\\CartController::index'], [], [['text', '/cart']], [], []],
+    'cart_remove' => [['id'], ['_controller' => 'App\\Controller\\CartController::removeAction'], [], [['text', '/remove'], ['variable', '/', '[^/]++', 'id', true], ['text', '/cart']], [], []],
+    'cart_add' => [['id'], ['_controller' => 'App\\Controller\\CartController::addAction'], [], [['text', '/add'], ['variable', '/', '[^/]++', 'id', true], ['text', '/cart']], [], []],
     'category_index' => [[], ['_controller' => 'App\\Controller\\CategoryController::index'], [], [['text', '/category/']], [], []],
     'category_new' => [[], ['_controller' => 'App\\Controller\\CategoryController::new'], [], [['text', '/category/new']], [], []],
     'category_show' => [['id'], ['_controller' => 'App\\Controller\\CategoryController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/category']], [], []],

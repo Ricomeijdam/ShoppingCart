@@ -3,6 +3,7 @@
 {% block title %}Category{% endblock %}
 
 {% block body %}
+    <div class="container">
     <h1>Category</h1>
 
     <table class="table">
@@ -18,9 +19,10 @@
         </tbody>
     </table>
 
-    <a href="{{ path('category_index') }}">back to list</a>
+    <span><a class="btn btn-outline-info" href="{{ path('category_index') }}">back to list</a></span>
 
-    <a href="{{ path('category_edit', {'id': category.id}) }}">edit</a>
+    <span><a class="btn btn-outline-dark" href="{{ path('category_edit', {'id': category.id}) }}">edit</a></span>
 
-    {{ include('category/_delete_form.html.twig') }}
+    <span {{ include('category/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

@@ -85,17 +85,18 @@ class __TwigTemplate_868cb2a2ea1711b1c851657db7cd91d11f59f38d6be374bfdc40d0d6d75
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new Category</h1>
-
-    ";
-        // line 8
+        echo "    <div class=\"container\">
+        <h2 class=\"mt-5\">Create new Category</h2>
+        <hr>
+        ";
+        // line 9
         echo twig_include($this->env, $context, "category/_form.html.twig");
         echo "
-
-    <a href=\"";
+        <a class=\"btn btn-outline-dark\" href=\"";
         // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_index");
         echo "\">back to list</a>
+    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -117,7 +118,7 @@ class __TwigTemplate_868cb2a2ea1711b1c851657db7cd91d11f59f38d6be374bfdc40d0d6d75
 
     public function getDebugInfo()
     {
-        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  97 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -127,12 +128,13 @@ class __TwigTemplate_868cb2a2ea1711b1c851657db7cd91d11f59f38d6be374bfdc40d0d6d75
 {% block title %}New Category{% endblock %}
 
 {% block body %}
-    <h1>Create new Category</h1>
-
-    {{ include('category/_form.html.twig') }}
-
-    <a href=\"{{ path('category_index') }}\">back to list</a>
+    <div class=\"container\">
+        <h2 class=\"mt-5\">Create new Category</h2>
+        <hr>
+        {{ include('category/_form.html.twig') }}
+        <a class=\"btn btn-outline-dark\" href=\"{{ path('category_index') }}\">back to list</a>
+    </div>
 {% endblock %}
-", "category/new.html.twig", "C:\\xampp\\htdocs\\cart\\templates\\category\\new.html.twig");
+", "category/new.html.twig", "C:\\xampp\\htdocs\\shoppingcart\\templates\\category\\new.html.twig");
     }
 }

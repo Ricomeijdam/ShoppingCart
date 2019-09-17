@@ -67,7 +67,9 @@ class __TwigTemplate_bdf98f97e737c63e1cf0ecfe086eb184f885ef807a0c34458b2900c3ee1
         // line 4
         echo "
     <div class=\"container\">
-    <table class=\"table\">
+
+    <h2 class=\"mt-5\">Overzicht van uw producten</h2>
+    <table class=\"mt-3 table\">
         <thead>
         <tr>
             <th>Naam</th>
@@ -78,27 +80,27 @@ class __TwigTemplate_bdf98f97e737c63e1cf0ecfe086eb184f885ef807a0c34458b2900c3ee1
         </thead>
         <tbody>
         ";
-        // line 16
+        // line 18
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["Products"]) || array_key_exists("Products", $context) ? $context["Products"] : (function () { throw new RuntimeError('Variable "Products" does not exist.', 16, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["Products"]) || array_key_exists("Products", $context) ? $context["Products"] : (function () { throw new RuntimeError('Variable "Products" does not exist.', 18, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 17
+            // line 19
             echo "        <tr>
             <td>";
-            // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "Product", [], "any", false, false, false, 18), "naam", [], "any", false, false, false, 18), "html", null, true);
+            // line 20
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "Product", [], "any", false, false, false, 20), "naam", [], "any", false, false, false, 20), "html", null, true);
             echo "</td>
             <td>€ ";
-            // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "Product", [], "any", false, false, false, 19), "prijs", [], "any", false, false, false, 19), "html", null, true);
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "Product", [], "any", false, false, false, 21), "prijs", [], "any", false, false, false, 21), "html", null, true);
             echo "</span></td>
             <td>";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "Product", [], "any", false, false, false, 20), "omschrijving", [], "any", false, false, false, 20), "html", null, true);
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "Product", [], "any", false, false, false, 22), "omschrijving", [], "any", false, false, false, 22), "html", null, true);
             echo "</td>
             <td>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "Aantal", [], "any", false, false, false, 21), "html", null, true);
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "Aantal", [], "any", false, false, false, 23), "html", null, true);
             echo "</td>
         </tr>
         </tbody>
@@ -107,28 +109,31 @@ class __TwigTemplate_bdf98f97e737c63e1cf0ecfe086eb184f885ef807a0c34458b2900c3ee1
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
+        // line 27
         echo "        <tr>
             <th>Totaal: € <span>";
-        // line 26
-        echo twig_escape_filter($this->env, (isset($context["totaal"]) || array_key_exists("totaal", $context) ? $context["totaal"] : (function () { throw new RuntimeError('Variable "totaal" does not exist.', 26, $this->source); })()), "html", null, true);
+        // line 28
+        echo twig_escape_filter($this->env, (isset($context["totaal"]) || array_key_exists("totaal", $context) ? $context["totaal"] : (function () { throw new RuntimeError('Variable "totaal" does not exist.', 28, $this->source); })()), "html", null, true);
         echo "</span></th>
         </tr>
     </table>
-
-    <div>
+    <div class=\"mt-5\">
+        <p>Vul hier uw gegevens in om de betalen te voltooien.</p>
+    </div>
+    <hr>
+    <div class=\"mt-2\">
         ";
-        // line 31
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["our_form"]) || array_key_exists("our_form", $context) ? $context["our_form"] : (function () { throw new RuntimeError('Variable "our_form" does not exist.', 31, $this->source); })()), 'form_start');
+        // line 36
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["our_form"]) || array_key_exists("our_form", $context) ? $context["our_form"] : (function () { throw new RuntimeError('Variable "our_form" does not exist.', 36, $this->source); })()), 'form_start');
         echo "
         ";
-        // line 32
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["our_form"]) || array_key_exists("our_form", $context) ? $context["our_form"] : (function () { throw new RuntimeError('Variable "our_form" does not exist.', 32, $this->source); })()), 'widget');
+        // line 37
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["our_form"]) || array_key_exists("our_form", $context) ? $context["our_form"] : (function () { throw new RuntimeError('Variable "our_form" does not exist.', 37, $this->source); })()), 'widget');
         echo "
         <input class=\"btn btn-outline-success\" type=\"submit\" value=\"Verzend\">
         ";
-        // line 34
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["our_form"]) || array_key_exists("our_form", $context) ? $context["our_form"] : (function () { throw new RuntimeError('Variable "our_form" does not exist.', 34, $this->source); })()), 'form_end');
+        // line 39
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["our_form"]) || array_key_exists("our_form", $context) ? $context["our_form"] : (function () { throw new RuntimeError('Variable "our_form" does not exist.', 39, $this->source); })()), 'form_end');
         echo "
     </div>
 
@@ -153,7 +158,7 @@ class __TwigTemplate_bdf98f97e737c63e1cf0ecfe086eb184f885ef807a0c34458b2900c3ee1
 
     public function getDebugInfo()
     {
-        return array (  131 => 34,  126 => 32,  122 => 31,  114 => 26,  111 => 25,  101 => 21,  97 => 20,  93 => 19,  89 => 18,  86 => 17,  82 => 16,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  136 => 39,  131 => 37,  127 => 36,  116 => 28,  113 => 27,  103 => 23,  99 => 22,  95 => 21,  91 => 20,  88 => 19,  84 => 18,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -163,7 +168,9 @@ class __TwigTemplate_bdf98f97e737c63e1cf0ecfe086eb184f885ef807a0c34458b2900c3ee1
 {% block body %}
 
     <div class=\"container\">
-    <table class=\"table\">
+
+    <h2 class=\"mt-5\">Overzicht van uw producten</h2>
+    <table class=\"mt-3 table\">
         <thead>
         <tr>
             <th>Naam</th>
@@ -186,8 +193,11 @@ class __TwigTemplate_bdf98f97e737c63e1cf0ecfe086eb184f885ef807a0c34458b2900c3ee1
             <th>Totaal: € <span>{{ totaal }}</span></th>
         </tr>
     </table>
-
-    <div>
+    <div class=\"mt-5\">
+        <p>Vul hier uw gegevens in om de betalen te voltooien.</p>
+    </div>
+    <hr>
+    <div class=\"mt-2\">
         {{ form_start(our_form) }}
         {{ form_widget(our_form) }}
         <input class=\"btn btn-outline-success\" type=\"submit\" value=\"Verzend\">

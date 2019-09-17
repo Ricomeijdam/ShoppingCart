@@ -67,60 +67,76 @@ class __TwigTemplate_049aad088371b2a6a712134b5a5ae0cc7555fcb27ff7f932aa760bbdc2d
         // line 4
         echo "
     <div class=\"container\">
-        <table class=\"table\">
-            <thead>
-            <tr>
-                <th>Naam</th>
-                <th>Prijs</th>
-                <th>Omschrijving</th>
-                <th>Aantal</th>
-            </tr>
-            </thead>
-            <tbody>
-            ";
-        // line 16
+    <h2>Winkelwagen</h2>
+    <table class=\"table\">
+        <thead>
+        <tr>
+            <th>Naam</th>
+            <th>Prijs</th>
+            <th>Omschrijving</th>
+            <th>Aantal</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        ";
+        // line 18
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["Products"]) || array_key_exists("Products", $context) ? $context["Products"] : (function () { throw new RuntimeError('Variable "Products" does not exist.', 16, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["Products"]) || array_key_exists("Products", $context) ? $context["Products"] : (function () { throw new RuntimeError('Variable "Products" does not exist.', 18, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 17
-            echo "            <tr>
-                <td>";
-            // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "Product", [], "any", false, false, false, 18), "naam", [], "any", false, false, false, 18), "html", null, true);
-            echo "</td>
-                <td>€ ";
             // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "Product", [], "any", false, false, false, 19), "prijs", [], "any", false, false, false, 19), "html", null, true);
-            echo "</span></td>
-                <td>";
+            echo "        <tr>
+            <td>";
             // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "Product", [], "any", false, false, false, 20), "omschrijving", [], "any", false, false, false, 20), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "Product", [], "any", false, false, false, 20), "naam", [], "any", false, false, false, 20), "html", null, true);
             echo "</td>
-                <td>";
+            <td>€ ";
             // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "Aantal", [], "any", false, false, false, 21), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "Product", [], "any", false, false, false, 21), "prijs", [], "any", false, false, false, 21), "html", null, true);
+            echo "</span></td>
+            <td>";
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "Product", [], "any", false, false, false, 22), "omschrijving", [], "any", false, false, false, 22), "html", null, true);
             echo "</td>
-            </tr>
-            </tbody>
-    ";
+            <td>";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "Aantal", [], "any", false, false, false, 23), "html", null, true);
+            echo "</td>
+            <td>
+                <a class=\"btn btn-outline-success\" href=\"";
+            // line 25
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_add", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "Product", [], "any", false, false, false, 25), "id", [], "any", false, false, false, 25)]), "html", null, true);
+            echo "\">Add</a>
+                <a class=\"btn btn-outline-danger\" href=\"";
+            // line 26
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_remove", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "Product", [], "any", false, false, false, 26), "id", [], "any", false, false, false, 26)]), "html", null, true);
+            echo "\">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
-        echo "            <tr>
-                <th>Totaal: € <span>";
-        // line 26
-        echo twig_escape_filter($this->env, (isset($context["totaal"]) || array_key_exists("totaal", $context) ? $context["totaal"] : (function () { throw new RuntimeError('Variable "totaal" does not exist.', 26, $this->source); })()), "html", null, true);
+        // line 31
+        echo "        <tr>
+            <th>Totaal: € <span>";
+        // line 32
+        echo twig_escape_filter($this->env, (isset($context["totaal"]) || array_key_exists("totaal", $context) ? $context["totaal"] : (function () { throw new RuntimeError('Variable "totaal" does not exist.', 32, $this->source); })()), "html", null, true);
         echo "</span></th>
-            </tr>
-        </table>
+        </tr>
+    </table>
 
     <div>
-        <button type=\"button\" class=\"btn btn-outline-success\"><a href=\"";
-        // line 31
+        <a class=\"btn btn-outline-success\" href=\"";
+        // line 37
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("checkout");
-        echo "\">Afrekenen</a></button>
+        echo "\">Afrekenen</a>
+        <span><a class=\"btn btn-outline-info\" href=\"";
+        // line 38
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_index");
+        echo "\">Veder winkelen</a></span>
     </div>
 
 
@@ -145,7 +161,7 @@ class __TwigTemplate_049aad088371b2a6a712134b5a5ae0cc7555fcb27ff7f932aa760bbdc2d
 
     public function getDebugInfo()
     {
-        return array (  122 => 31,  114 => 26,  111 => 25,  101 => 21,  97 => 20,  93 => 19,  89 => 18,  86 => 17,  82 => 16,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  138 => 38,  134 => 37,  126 => 32,  123 => 31,  112 => 26,  108 => 25,  103 => 23,  99 => 22,  95 => 21,  91 => 20,  88 => 19,  84 => 18,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -155,32 +171,39 @@ class __TwigTemplate_049aad088371b2a6a712134b5a5ae0cc7555fcb27ff7f932aa760bbdc2d
 {% block body %}
 
     <div class=\"container\">
-        <table class=\"table\">
-            <thead>
-            <tr>
-                <th>Naam</th>
-                <th>Prijs</th>
-                <th>Omschrijving</th>
-                <th>Aantal</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for product in Products %}
-            <tr>
-                <td>{{ product.Product.naam }}</td>
-                <td>€ {{ product.Product.prijs }}</span></td>
-                <td>{{ product.Product.omschrijving }}</td>
-                <td>{{ product.Aantal }}</td>
-            </tr>
-            </tbody>
-    {% endfor %}
-            <tr>
-                <th>Totaal: € <span>{{ totaal }}</span></th>
-            </tr>
-        </table>
+    <h2>Winkelwagen</h2>
+    <table class=\"table\">
+        <thead>
+        <tr>
+            <th>Naam</th>
+            <th>Prijs</th>
+            <th>Omschrijving</th>
+            <th>Aantal</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in Products %}
+        <tr>
+            <td>{{ product.Product.naam }}</td>
+            <td>€ {{ product.Product.prijs }}</span></td>
+            <td>{{ product.Product.omschrijving }}</td>
+            <td>{{ product.Aantal }}</td>
+            <td>
+                <a class=\"btn btn-outline-success\" href=\"{{ path('cart_add', {'id': product.Product.id}) }}\">Add</a>
+                <a class=\"btn btn-outline-danger\" href=\"{{ path('cart_remove', {'id': product.Product.id}) }}\">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+        {% endfor %}
+        <tr>
+            <th>Totaal: € <span>{{ totaal }}</span></th>
+        </tr>
+    </table>
 
     <div>
-        <button type=\"button\" class=\"btn btn-outline-success\"><a href=\"{{ path('checkout') }}\">Afrekenen</a></button>
+        <a class=\"btn btn-outline-success\" href=\"{{ path('checkout') }}\">Afrekenen</a>
+        <span><a class=\"btn btn-outline-info\" href=\"{{ path('product_index') }}\">Veder winkelen</a></span>
     </div>
 
 

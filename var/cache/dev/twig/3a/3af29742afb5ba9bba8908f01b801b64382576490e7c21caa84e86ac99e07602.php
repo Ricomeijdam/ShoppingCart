@@ -86,10 +86,10 @@ class __TwigTemplate_8a30dbf9b5da0f875a50433e35f65b47d48fba9e74f777b033b3489e091
 
         // line 6
         echo "    <div class=\"container\">
-        <h1>Product index</h1>
-
-        <table class=\"table\">
-            <thead>
+        <h2 class=\"mt-5\">Producten</h2>
+        <hr>
+        <table class=\"table table-striped\">
+            <thead class=\"thead-dark\">
                 <tr>
                     <th>Id</th>
                     <th>Naam</th>
@@ -129,15 +129,15 @@ class __TwigTemplate_8a30dbf9b5da0f875a50433e35f65b47d48fba9e74f777b033b3489e091
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "omschrijving", [], "any", false, false, false, 27), "html", null, true);
             echo "</td>
                     <td>
-                        <a href=\"";
+                        <a class=\"btn btn-outline-success\" href=\"";
             // line 29
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_show", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 29)]), "html", null, true);
             echo "\">show</a>
-                        <a href=\"";
+                        <a class=\"btn btn-outline-dark\" href=\"";
             // line 30
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 30)]), "html", null, true);
             echo "\">edit</a>
-                        <a href=\"";
+                        <a class=\"btn btn-outline-primary\" href=\"";
             // line 31
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_add", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 31)]), "html", null, true);
             echo "\">Add to cart</a>
@@ -160,7 +160,7 @@ class __TwigTemplate_8a30dbf9b5da0f875a50433e35f65b47d48fba9e74f777b033b3489e091
         echo "            </tbody>
         </table>
 
-        <a href=\"";
+        <a class=\"btn btn-outline-info\" href=\"";
         // line 42
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_new");
         echo "\">Create new</a>
@@ -197,10 +197,10 @@ class __TwigTemplate_8a30dbf9b5da0f875a50433e35f65b47d48fba9e74f777b033b3489e091
 
 {% block body %}
     <div class=\"container\">
-        <h1>Product index</h1>
-
-        <table class=\"table\">
-            <thead>
+        <h2 class=\"mt-5\">Producten</h2>
+        <hr>
+        <table class=\"table table-striped\">
+            <thead class=\"thead-dark\">
                 <tr>
                     <th>Id</th>
                     <th>Naam</th>
@@ -219,9 +219,9 @@ class __TwigTemplate_8a30dbf9b5da0f875a50433e35f65b47d48fba9e74f777b033b3489e091
                     <td>{{ product.image }}</td>
                     <td>{{ product.omschrijving }}</td>
                     <td>
-                        <a href=\"{{ path('product_show', {'id': product.id}) }}\">show</a>
-                        <a href=\"{{ path('product_edit', {'id': product.id}) }}\">edit</a>
-                        <a href=\"{{ path('product_add', {'id': product.id}) }}\">Add to cart</a>
+                        <a class=\"btn btn-outline-success\" href=\"{{ path('product_show', {'id': product.id}) }}\">show</a>
+                        <a class=\"btn btn-outline-dark\" href=\"{{ path('product_edit', {'id': product.id}) }}\">edit</a>
+                        <a class=\"btn btn-outline-primary\" href=\"{{ path('product_add', {'id': product.id}) }}\">Add to cart</a>
                     </td>
                 </tr>
             {% else %}
@@ -232,7 +232,7 @@ class __TwigTemplate_8a30dbf9b5da0f875a50433e35f65b47d48fba9e74f777b033b3489e091
             </tbody>
         </table>
 
-        <a href=\"{{ path('product_new') }}\">Create new</a>
+        <a class=\"btn btn-outline-info\" href=\"{{ path('product_new') }}\">Create new</a>
     </div>
 {% endblock %}
 ", "product/index.html.twig", "C:\\xampp\\htdocs\\shoppingcart\\templates\\product\\index.html.twig");

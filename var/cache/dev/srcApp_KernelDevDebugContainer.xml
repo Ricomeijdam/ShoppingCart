@@ -264,6 +264,7 @@
     <parameter key="twig.exception_listener.controller">twig.controller.exception::showAction</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
+      <parameter>bootstrap_4_horizontal_layout.html.twig</parameter>
     </parameter>
     <parameter key="twig.default_path">C:\xampp\htdocs\shoppingcart/templates</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
@@ -3868,10 +3869,11 @@
         <argument key="default_path">C:\xampp\htdocs\shoppingcart/templates</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
-        <argument key="exception_controller">twig.controller.exception::showAction</argument>
         <argument key="form_themes" type="collection">
           <argument>form_div_layout.html.twig</argument>
+          <argument>bootstrap_4_horizontal_layout.html.twig</argument>
         </argument>
+        <argument key="exception_controller">twig.controller.exception::showAction</argument>
         <argument key="autoescape">name</argument>
         <argument key="cache">C:\xampp\htdocs\shoppingcart\var\cache\dev/twig</argument>
         <argument key="charset">UTF-8</argument>
@@ -4726,6 +4728,12 @@
         <argument key="productRepository" type="service" id="App\Repository\ProductRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.ZzSB_Y3" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="product" type="service" id=".errored..service_locator.ZzSB_Y3.App\Entity\Product"/>
+      </argument>
+    </service>
     <service id=".service_locator.a.laFVK" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -4745,12 +4753,6 @@
         <argument key="productRepository" type="service" id="App\Repository\ProductRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.ZzSB_Y3" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="product" type="service" id=".errored..service_locator.ZzSB_Y3.App\Entity\Product"/>
-      </argument>
-    </service>
     <service id=".service_locator.2G0rgMK" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -4758,10 +4760,12 @@
         <argument key="productRepository" type="service" id="App\Repository\ProductRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.7QQOCaJ" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.iUKMMbE" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\CartController::addAction" type="service" id=".service_locator.ZzSB_Y3"/>
         <argument key="App\Controller\CartController::index" type="service" id=".service_locator.PeS.Fgc"/>
+        <argument key="App\Controller\CartController::removeAction" type="service" id=".service_locator.ZzSB_Y3"/>
         <argument key="App\Controller\CategoryController::delete" type="service" id=".service_locator..JzDQIR"/>
         <argument key="App\Controller\CategoryController::edit" type="service" id=".service_locator..JzDQIR"/>
         <argument key="App\Controller\CategoryController::index" type="service" id=".service_locator.a.laFVK"/>
@@ -4772,7 +4776,9 @@
         <argument key="App\Controller\ProductController::edit" type="service" id=".service_locator.ZzSB_Y3"/>
         <argument key="App\Controller\ProductController::index" type="service" id=".service_locator.PeS.Fgc"/>
         <argument key="App\Controller\ProductController::show" type="service" id=".service_locator.ZzSB_Y3"/>
+        <argument key="App\Controller\CartController:addAction" type="service" id=".service_locator.ZzSB_Y3"/>
         <argument key="App\Controller\CartController:index" type="service" id=".service_locator.PeS.Fgc"/>
+        <argument key="App\Controller\CartController:removeAction" type="service" id=".service_locator.ZzSB_Y3"/>
         <argument key="App\Controller\CategoryController:delete" type="service" id=".service_locator..JzDQIR"/>
         <argument key="App\Controller\CategoryController:edit" type="service" id=".service_locator..JzDQIR"/>
         <argument key="App\Controller\CategoryController:index" type="service" id=".service_locator.a.laFVK"/>
@@ -5188,12 +5194,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.7QQOCaJ"/>
+      <argument type="service" id=".service_locator.iUKMMbE"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.7QQOCaJ"/>
+      <argument type="service" id=".service_locator.iUKMMbE"/>
     </service>
     <service id=".service_locator.UwRI0uT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
@@ -5217,8 +5223,8 @@
         <argument key="security.token_storage" type="service" id="security.token_storage"/>
       </argument>
     </service>
-    <service id=".errored..service_locator..JzDQIR.App\Entity\Category" class="App\Entity\Category"/>
     <service id=".errored..service_locator.ZzSB_Y3.App\Entity\Product" class="App\Entity\Product"/>
+    <service id=".errored..service_locator..JzDQIR.App\Entity\Category" class="App\Entity\Category"/>
     <service id=".errored..service_locator.2G0rgMK.App\Entity\Product" class="App\Entity\Product"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <argument type="service" id=".service_locator.UvMMnf."/>
@@ -5570,7 +5576,7 @@
     <service id="Twig\Environment" alias="twig" public="false"/>
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.7QQOCaJ"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.iUKMMbE"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>

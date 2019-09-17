@@ -46,15 +46,13 @@ class __TwigTemplate_f4f10277504dbcb4e5fca22755387edae295a68e0ed40416fde1b138867
         // line 2
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 2, $this->source); })()), 'widget');
         echo "
-    <button class=\"btn\">";
+    <input type=\"submit\" class=\"btn btn-outline-success\" value=\"";
         // line 3
         echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 3, $this->source); })()), "Save")) : ("Save")), "html", null, true);
-        echo "</button>
+        echo "\">
 ";
         // line 4
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 4, $this->source); })()), 'form_end');
-        echo "
-";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -82,8 +80,7 @@ class __TwigTemplate_f4f10277504dbcb4e5fca22755387edae295a68e0ed40416fde1b138867
     {
         return new Source("{{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class=\"btn\">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
-", "category/_form.html.twig", "C:\\xampp\\htdocs\\cart\\templates\\category\\_form.html.twig");
+    <input type=\"submit\" class=\"btn btn-outline-success\" value=\"{{ button_label|default('Save') }}\">
+{{ form_end(form) }}", "category/_form.html.twig", "C:\\xampp\\htdocs\\shoppingcart\\templates\\category\\_form.html.twig");
     }
 }

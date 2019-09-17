@@ -59,38 +59,86 @@ class __TwigTemplate_10b434e73ca82793871a28dc0717603fb8f004872297e1ac14c13ea38af
         echo "    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
 </head>
 <body>
-<div class=\"d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm\">
-    <h5 class=\"my-0 mr-md-auto font-weight-normal\">Company name</h5>
-    <nav class=\"my-2 my-md-0 mr-md-3\">
-        <a class=\"p-2 text-dark\" href=\"";
-        // line 13
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("deafult");
-        echo "\">Home</a>
-        <a class=\"p-2 text-dark\" href=\"";
+<header>
+    <nav class=\"navbar navbar-expand-sm navbar-dark bg-dark\">
+        <div class=\"container\">
+            <ul class=\"navbar-nav mr-auto\">
+                <li class=\"nav-item\"><a class=\"nav-link p-2 text-light\" href=\"";
         // line 14
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_index");
-        echo "\">Product</a>
-        <a class=\"p-2 text-dark\" href=\"";
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("deafult");
+        echo "\">Home</a></li>
+                <li class=\"nav-item\"><a class=\"nav-link p-2 text-light\" href=\"";
         // line 15
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_index");
-        echo "\">Category</a>
-        <a class=\"p-2 text-dark\" href=\"";
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_index");
+        echo "\">Product</a></li>
+                <li class=\"nav-item\"><a class=\"nav-link p-2 text-light\" href=\"";
         // line 16
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_index");
+        echo "\">Category</a></li>
+            </ul>
+            <ul class=\"navbar-nav\">
+                <li class=\"nav-item\">
+                    <a class=\"nav-link p-2 text-light\" href=\"";
+        // line 20
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart");
-        echo "\">Cart</a>
+        echo "\">
+                        Cart
+                        <span class=\"badge\">
+                                <i class=\"fas fa-shopping-cart\"></i>
+                                ";
+        // line 24
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 24, $this->source); })()), "session", [], "any", false, false, false, 24), "get", [0 => "Cart"], "method", false, false, false, 24));
+        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+            // line 25
+            echo "                                    ";
+            if (twig_get_attribute($this->env, $this->source, $context["item"], "Aantal", [], "array", true, true, false, 25)) {
+                // line 26
+                echo "                                        <span class=\"Aantal\" style=\"display: none;\">";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "Aantal", [], "array", false, false, false, 26), "html", null, true);
+                echo "</span>
+                                    ";
+            }
+            // line 28
+            echo "                                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 29
+        echo "                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </nav>
-</div>
+</header>
 
 ";
-        // line 20
+        // line 37
         $this->displayBlock('body', $context, $blocks);
-        // line 22
+        // line 39
         echo "
 ";
-        // line 23
+        // line 40
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 24
-        echo "    <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
+        // line 41
+        echo "    <script>
+        const amounts = document.getElementsByClassName('Aantal');
+        let total = 0;
+
+        for (let x = 0; x < amounts.length; x++) {
+            const amount = parseInt(amounts[x].innerText);
+
+            total += amount
+        }
+
+        document.getElementsByClassName('fa-shopping-cart')[0].innerHTML = \" \" + total
+
+
+    </script>
+    <script src=\"https://kit.fontawesome.com/525e4431a2.js\"></script>
+    <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
     <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
 </body>
@@ -141,7 +189,7 @@ class __TwigTemplate_10b434e73ca82793871a28dc0717603fb8f004872297e1ac14c13ea38af
 
     }
 
-    // line 20
+    // line 37
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -159,7 +207,7 @@ class __TwigTemplate_10b434e73ca82793871a28dc0717603fb8f004872297e1ac14c13ea38af
 
     }
 
-    // line 23
+    // line 40
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -189,7 +237,7 @@ class __TwigTemplate_10b434e73ca82793871a28dc0717603fb8f004872297e1ac14c13ea38af
 
     public function getDebugInfo()
     {
-        return array (  163 => 23,  145 => 20,  127 => 6,  108 => 5,  93 => 24,  91 => 23,  88 => 22,  86 => 20,  79 => 16,  75 => 15,  71 => 14,  67 => 13,  59 => 7,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  211 => 40,  193 => 37,  175 => 6,  156 => 5,  126 => 41,  124 => 40,  121 => 39,  119 => 37,  109 => 29,  103 => 28,  97 => 26,  94 => 25,  90 => 24,  83 => 20,  76 => 16,  72 => 15,  68 => 14,  59 => 7,  57 => 6,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -203,20 +251,52 @@ class __TwigTemplate_10b434e73ca82793871a28dc0717603fb8f004872297e1ac14c13ea38af
     <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
 </head>
 <body>
-<div class=\"d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm\">
-    <h5 class=\"my-0 mr-md-auto font-weight-normal\">Company name</h5>
-    <nav class=\"my-2 my-md-0 mr-md-3\">
-        <a class=\"p-2 text-dark\" href=\"{{ path('deafult') }}\">Home</a>
-        <a class=\"p-2 text-dark\" href=\"{{ path('product_index') }}\">Product</a>
-        <a class=\"p-2 text-dark\" href=\"{{ path('category_index') }}\">Category</a>
-        <a class=\"p-2 text-dark\" href=\"{{ path('cart') }}\">Cart</a>
+<header>
+    <nav class=\"navbar navbar-expand-sm navbar-dark bg-dark\">
+        <div class=\"container\">
+            <ul class=\"navbar-nav mr-auto\">
+                <li class=\"nav-item\"><a class=\"nav-link p-2 text-light\" href=\"{{ path('deafult') }}\">Home</a></li>
+                <li class=\"nav-item\"><a class=\"nav-link p-2 text-light\" href=\"{{ path('product_index') }}\">Product</a></li>
+                <li class=\"nav-item\"><a class=\"nav-link p-2 text-light\" href=\"{{ path('category_index') }}\">Category</a></li>
+            </ul>
+            <ul class=\"navbar-nav\">
+                <li class=\"nav-item\">
+                    <a class=\"nav-link p-2 text-light\" href=\"{{ path('cart') }}\">
+                        Cart
+                        <span class=\"badge\">
+                                <i class=\"fas fa-shopping-cart\"></i>
+                                {% for item in app.session.get(\"Cart\") %}
+                                    {% if item[\"Aantal\"] is defined %}
+                                        <span class=\"Aantal\" style=\"display: none;\">{{ item[\"Aantal\"] }}</span>
+                                    {% endif %}
+                                {% endfor %}
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </nav>
-</div>
+</header>
 
 {% block body %}
 {% endblock %}
 
 {% block javascripts %}{% endblock %}
+    <script>
+        const amounts = document.getElementsByClassName('Aantal');
+        let total = 0;
+
+        for (let x = 0; x < amounts.length; x++) {
+            const amount = parseInt(amounts[x].innerText);
+
+            total += amount
+        }
+
+        document.getElementsByClassName('fa-shopping-cart')[0].innerHTML = \" \" + total
+
+
+    </script>
+    <script src=\"https://kit.fontawesome.com/525e4431a2.js\"></script>
     <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
     <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>

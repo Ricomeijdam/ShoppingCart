@@ -4,10 +4,10 @@
 
 {% block body %}
     <div class="container">
-        <h1>Product index</h1>
-
-        <table class="table">
-            <thead>
+        <h2 class="mt-5">Producten</h2>
+        <hr>
+        <table class="table table-striped">
+            <thead class="thead-dark">
                 <tr>
                     <th>Id</th>
                     <th>Naam</th>
@@ -26,9 +26,9 @@
                     <td>{{ product.image }}</td>
                     <td>{{ product.omschrijving }}</td>
                     <td>
-                        <a href="{{ path('product_show', {'id': product.id}) }}">show</a>
-                        <a href="{{ path('product_edit', {'id': product.id}) }}">edit</a>
-                        <a href="{{ path('product_add', {'id': product.id}) }}">Add to cart</a>
+                        <a class="btn btn-outline-success" href="{{ path('product_show', {'id': product.id}) }}">show</a>
+                        <a class="btn btn-outline-dark" href="{{ path('product_edit', {'id': product.id}) }}">edit</a>
+                        <a class="btn btn-outline-primary" href="{{ path('product_add', {'id': product.id}) }}">Add to cart</a>
                     </td>
                 </tr>
             {% else %}
@@ -39,6 +39,6 @@
             </tbody>
         </table>
 
-        <a href="{{ path('product_new') }}">Create new</a>
+        <a class="btn btn-outline-info" href="{{ path('product_new') }}">Create new</a>
     </div>
 {% endblock %}

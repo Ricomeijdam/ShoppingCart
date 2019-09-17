@@ -38,18 +38,24 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/category/([^/]++)(?'
-                    .'|(*:190)'
-                    .'|/edit(*:203)'
-                    .'|(*:211)'
+                .'|/ca(?'
+                    .'|rt/([^/]++)/(?'
+                        .'|remove(*:196)'
+                        .'|add(*:207)'
+                    .')'
+                    .'|tegory/([^/]++)(?'
+                        .'|(*:234)'
+                        .'|/edit(*:247)'
+                        .'|(*:255)'
+                    .')'
                 .')'
                 .'|/product(?'
                     .'|/([^/]++)(?'
-                        .'|(*:243)'
-                        .'|/edit(*:256)'
-                        .'|(*:264)'
+                        .'|(*:288)'
+                        .'|/edit(*:301)'
+                        .'|(*:309)'
                     .')'
-                    .'|add/([^/]++)(*:285)'
+                    .'|add/([^/]++)(*:330)'
                 .')'
             .')/?$}sDu',
     ],
@@ -61,13 +67,15 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        190 => [[['_route' => 'category_show', '_controller' => 'App\\Controller\\CategoryController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        203 => [[['_route' => 'category_edit', '_controller' => 'App\\Controller\\CategoryController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        211 => [[['_route' => 'category_delete', '_controller' => 'App\\Controller\\CategoryController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        243 => [[['_route' => 'product_show', '_controller' => 'App\\Controller\\ProductController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        256 => [[['_route' => 'product_edit', '_controller' => 'App\\Controller\\ProductController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        264 => [[['_route' => 'product_delete', '_controller' => 'App\\Controller\\ProductController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        285 => [
+        196 => [[['_route' => 'cart_remove', '_controller' => 'App\\Controller\\CartController::removeAction'], ['id'], null, null, false, false, null]],
+        207 => [[['_route' => 'cart_add', '_controller' => 'App\\Controller\\CartController::addAction'], ['id'], null, null, false, false, null]],
+        234 => [[['_route' => 'category_show', '_controller' => 'App\\Controller\\CategoryController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        247 => [[['_route' => 'category_edit', '_controller' => 'App\\Controller\\CategoryController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        255 => [[['_route' => 'category_delete', '_controller' => 'App\\Controller\\CategoryController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        288 => [[['_route' => 'product_show', '_controller' => 'App\\Controller\\ProductController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        301 => [[['_route' => 'product_edit', '_controller' => 'App\\Controller\\ProductController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        309 => [[['_route' => 'product_delete', '_controller' => 'App\\Controller\\ProductController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        330 => [
             [['_route' => 'product_add', '_controller' => 'App\\Controller\\ProductController::add'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

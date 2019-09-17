@@ -3,7 +3,9 @@
 {% block body %}
 
     <div class="container">
-    <table class="table">
+
+    <h2 class="mt-5">Overzicht van uw producten</h2>
+    <table class="mt-3 table">
         <thead>
         <tr>
             <th>Naam</th>
@@ -26,8 +28,11 @@
             <th>Totaal: € <span>{{ totaal }}</span></th>
         </tr>
     </table>
-
-    <div>
+    <div class="mt-5">
+        <p>Vul hier uw gegevens in om de betalen te voltooien.</p>
+    </div>
+    <hr>
+    <div class="mt-2">
         {{ form_start(our_form) }}
         {{ form_widget(our_form) }}
         <input class="btn btn-outline-success" type="submit" value="Verzend">
